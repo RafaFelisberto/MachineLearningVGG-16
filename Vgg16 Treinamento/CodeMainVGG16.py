@@ -57,7 +57,7 @@ model.compile(optimizer=Adam(learning_rate=0.0001), loss='binary_crossentropy', 
 train_datagen = ImageDataGenerator(rescale=1./255, validation_split=0.2)
 
 train_generator = train_datagen.flow_from_directory(
-    'ImagensTreino',  # Caminho dos seus dados de treino
+    'ImagensTreino',  
     target_size=(224, 224),
     batch_size=32,
     class_mode='binary',
@@ -65,7 +65,7 @@ train_generator = train_datagen.flow_from_directory(
 )
 
 validation_generator = train_datagen.flow_from_directory(
-    'ImagensTreino',  # Caminho dos seus dados de validação
+    'ImagensTreino',  
     target_size=(224, 224),
     batch_size=32,
     class_mode='binary',
@@ -85,7 +85,7 @@ history = model.fit(
 test_datagen = ImageDataGenerator(rescale=1./255)
 
 test_generator = test_datagen.flow_from_directory(
-    'ImagensTeste',  # Caminho dos seus dados de teste
+    'ImagensTeste', 
     target_size=(224, 224),
     batch_size=32,
     class_mode='binary'
